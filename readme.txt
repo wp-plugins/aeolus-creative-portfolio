@@ -35,6 +35,8 @@ An answer to that question.
 
 1. Front end screenshot
 2. Asmin screenshot
+3. Front end screenshot
+4. Front end screenshot
 
 == Changelog ==
 
