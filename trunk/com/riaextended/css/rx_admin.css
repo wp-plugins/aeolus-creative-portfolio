@@ -1,0 +1,92 @@
+/* generic admin styles
+================================================== */
+.sk_notice{
+	padding: 10px;
+	background-color: #d9edf7;
+	color: #3a87ad;
+	border: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: #bce8f1;	
+}
+
+.sk_admin_row{
+	clear: both;
+}
+.sk_admin_span3{
+	padding: 10px;
+	width: 30%;
+	float: left;
+}
+.sk_admin_span6{
+	padding: 10px;
+	width: 60%;
+	float: left;
+}
+
+.sk_clear_fx{
+	clear: both;	
+}
+
+
+.optionBox{
+	background-color: #F2F2F2;
+	padding: 15px;
+	border-radius: 5px;
+}
+
+.hline{
+	height: 1px;
+	background-color: #CCC;
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+/* sortable box - images */
+.sortableThumbs{ 
+	list-style-type: none; margin: 0; padding: 0; 
+}
+.sortableThumbs li{
+	margin: 3px 3px 3px 0; 
+	padding: 1px; 
+	float: left; 
+	width: 150px; 
+	height: 150px; 
+}
+.thumbBoxImage{
+	position: relative;
+}
+.featuredThumbOverlay{
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: rgba(0,0,0,.7);
+}
+.thumbOverlayMove{
+	width: 46px;
+	height: 45px;
+	position: relative;
+	margin: auto;
+	margin-top: 50px;
+	background: url('images/move.png');
+}
+.thumbOverlayRemove{
+	width: 20px;
+	height: 20px;
+	position: relative;
+	margin-left: 3px;
+	margin-top: 32px;
+	background: url('images/trash.png');
+	cursor: pointer;	
+}
+/* end sortable box - images */
+
+
+.space10{
+	height: 1px;
+	margin-top: 10px;
+}
+
+
