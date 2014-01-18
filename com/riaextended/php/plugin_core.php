@@ -98,7 +98,7 @@ class AXPluginCore extends AxPluginBase {
 
 	//add submenu page
 	public function adminMenuHandler(){
-		$rx_options_page = new RXOptionPage(AX_PORTFOLIO_OPTION_GROUP);
+		$rx_options_page = new AXOptionPage(AX_PORTFOLIO_OPTION_GROUP);
 		add_submenu_page( 'edit.php?post_type='.AX_PORTFOLIO_SLUG, 'Aeolus settings', 'Aeolus settings', 'manage_options', 'rx_portfolio_sett', array($rx_options_page, 'settings_page'));		 
 	}
 
