@@ -2,8 +2,8 @@
 /**
  * generic CPT
  */
-require_once(RXP_CLASS_PATH.'/com/riaextended/php/customposts/impl/iRxGenericPostType.php');
-class RXGenericPostType implements IRXGenericPostType{
+require_once(AXP_CLASS_PATH.'/com/riaextended/php/customposts/impl/iRxGenericPostType.php');
+class AXGenericPostType implements IAXGenericPostType{
 	
 	protected $settings;
 	protected $cptHelper;

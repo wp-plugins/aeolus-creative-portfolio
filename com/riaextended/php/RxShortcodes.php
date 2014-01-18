@@ -2,10 +2,10 @@
 /**
  * Shortcode
  */
-require_once(RXP_CLASS_PATH.'/com/riaextended/php/rx_plugin_options.php');
-require_once(RXP_CLASS_PATH.'/com/riaextended/php/rx_post_options.php');
-require_once(RXP_CLASS_PATH.'/com/riaextended/php/libs/blogutils/BlogPagination.php');
-require_once(RXP_CLASS_PATH.'/com/riaextended/php/libs/mobile/rx_mobile_detect.php');
+require_once(AXP_CLASS_PATH.'/com/riaextended/php/rx_plugin_options.php');
+require_once(AXP_CLASS_PATH.'/com/riaextended/php/rx_post_options.php');
+require_once(AXP_CLASS_PATH.'/com/riaextended/php/libs/blogutils/BlogPagination.php');
+require_once(AXP_CLASS_PATH.'/com/riaextended/php/libs/mobile/rx_mobile_detect.php');
 class RxPShortcodes{
 	
 	public function registerShortcodes(){
@@ -28,12 +28,12 @@ class RxPShortcodes{
 		
 		$detect = new RX_Mobile_Detect();
 		$is_mobile = ($detect->isMobile())?'true':'false';	
-		$pluginOpts = new PluginOptions();
+		$pluginOpts = new AxPluginOptions();
 		$labels = $pluginOpts->getLabels();
 		$colors = $pluginOpts->getColors();
 		$opts = $pluginOpts->getOptions();
 		
-		$rx_query = array('post_type' => RX_PORTFOLIO_SLUG, 'paged'=>$paged, 'posts_per_page' =>$opts['max_portfolio_posts']);													
+		$rx_query = array('post_type' => AX_PORTFOLIO_SLUG, 'paged'=>$paged, 'posts_per_page' =>$opts['max_portfolio_posts']);													
 		$out = '<div class="rx_parallax" data-isMobile="'.$is_mobile.'">';			
 			$query = new WP_Query($rx_query);			
 			if($query->have_posts()) {				
@@ -128,7 +128,7 @@ class RxPShortcodes{
 	================================================== */	
 	public function rx_aeolus_three_cols($atts, $content = null){
 		extract(shortcode_atts(array('category_slug' => ''), $atts));
-		$rx_query = array('post_type' => RX_PORTFOLIO_SLUG, 'posts_per_page' =>'-1');		
+		$rx_query = array('post_type' => AX_PORTFOLIO_SLUG, 'posts_per_page' =>'-1');		
 		if($category_slug!=''){									 
 			 $term = term_exists($category_slug);
 			 if ($term == 0 || $term == null) {
@@ -207,7 +207,7 @@ class RxPShortcodes{
 	================================================== */	
 	public function rx_aeolus_two_cols($atts, $content = null){
 		extract(shortcode_atts(array('category_slug' => ''), $atts));
-		$rx_query = array('post_type' => RX_PORTFOLIO_SLUG, 'posts_per_page' =>'-1');		
+		$rx_query = array('post_type' => AX_PORTFOLIO_SLUG, 'posts_per_page' =>'-1');		
 		if($category_slug!=''){									 
 			 $term = term_exists($category_slug);
 			 if ($term == 0 || $term == null) {
@@ -283,7 +283,7 @@ class RxPShortcodes{
 	================================================== */	
 	public function rx_aeolus_one_col($atts, $content = null){
 		extract(shortcode_atts(array('category_slug' => ''), $atts));
-		$rx_query = array('post_type' => RX_PORTFOLIO_SLUG, 'posts_per_page' =>'-1');		
+		$rx_query = array('post_type' => AX_PORTFOLIO_SLUG, 'posts_per_page' =>'-1');		
 		if($category_slug!=''){									 
 			 $term = term_exists($category_slug);
 			 if ($term == 0 || $term == null) {

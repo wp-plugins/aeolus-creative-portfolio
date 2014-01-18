@@ -3,17 +3,17 @@
 /**
  * plugin options
  */
-class PluginOptions {
+class AxPluginOptions {
 	
 	private $options;
 	function __construct() {
-		$this->options = get_option(RX_PORTFOLIO_OPTION_GROUP);		
+		$this->options = get_option(AX_PORTFOLIO_OPTION_GROUP);		
 	}
 	
 	private static $instance;
 	public static function getInstance(){
 		if(!self::$instance){
-			self::$instance = new PluginOptions();
+			self::$instance = new AxPluginOptions();
 		}
 		return self::$instance;		
 	}

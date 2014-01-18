@@ -3,7 +3,7 @@
 /**
  *  generic settings
  */
-class RX_GenericSettingsPage{
+class AX_GenericSettingsPage{
 	
 	private $optionsGroup;
 	function __construct($optsGroup) {
@@ -26,7 +26,7 @@ class RX_GenericSettingsPage{
 /**
  * RXOptionPage
  */
-class RXOptionPage extends RX_GenericSettingsPage {
+class AXOptionPage extends AX_GenericSettingsPage {
 	
 	public function settings_page(){
 		$options = get_option($this->getOptionGroup());							
@@ -47,13 +47,13 @@ class RXOptionPage extends RX_GenericSettingsPage {
 		        </div>
         		  									
 				<p class="submit">
-					<input type="submit" class="button-primary pull-right" value="<?php _e('Save Changes', RX_PLUGIN_TEXTDOMAIN) ?>" />
+					<input type="submit" class="button-primary pull-right" value="<?php _e('Save Changes', AX_PLUGIN_TEXTDOMAIN) ?>" />
 		        </p>
 		        <div class="clearfix spacer10"></div>		        
 		        
 			    <div class="tabbable tabs-left">
 				    <ul class="nav nav-tabs">					    
-					    <li class="active"><a href="#general_opts" data-toggle="tab"><i class="icon-home"></i> <?php _e('General Options', RX_PLUGIN_TEXTDOMAIN) ?></a></li>					    					    					    				    				    
+					    <li class="active"><a href="#general_opts" data-toggle="tab"><i class="icon-home"></i> <?php _e('General Options', AX_PLUGIN_TEXTDOMAIN) ?></a></li>					    					    					    				    				    
 				    </ul>
 				    
 				    <!--tabs content-->
@@ -61,7 +61,7 @@ class RXOptionPage extends RX_GenericSettingsPage {
 					    					    
 					    <?php
 					    	//general style tab
-					    	require_once(RXP_CLASS_PATH.'/com/riaextended/php/admin_pages/settings_pages/general_options.php');					    																																																																
+					    	require_once(AXP_CLASS_PATH.'/com/riaextended/php/admin_pages/settings_pages/general_options.php');					    																																																																
 					    ?>
 
 
@@ -72,7 +72,7 @@ class RXOptionPage extends RX_GenericSettingsPage {
 	        
 		        
 				<p class="submit">
-					<input type="submit" class="button-primary pull-right" value="<?php _e('Save Changes', RX_PLUGIN_TEXTDOMAIN) ?>" />
+					<input type="submit" class="button-primary pull-right" value="<?php _e('Save Changes', AX_PLUGIN_TEXTDOMAIN) ?>" />
 		        </p>		        
 		        
 	      </div>

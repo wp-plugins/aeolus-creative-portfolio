@@ -4,7 +4,7 @@
 /**
  * base class
  */
-class RxPluginBase {
+class AxPluginBase {
 
 	//init handler
 	public function initializeHandler(){
@@ -23,7 +23,7 @@ class RxPluginBase {
 	//admin enqueue scripts handler
 	public function adminEnqueueScriptsHandler(){
 		//default styles
-		wp_register_style('sk_admin-style', RX_TEMPPATH.'/com/riaextended/css/rx_admin.css');
+		wp_register_style('sk_admin-style', AX_TEMPPATH.'/com/riaextended/css/rx_admin.css');
 		wp_enqueue_style('sk_admin-style');				
 		//default JS
 		wp_enqueue_script('jquery');

@@ -1,3 +1,10 @@
+(function($) {
+  "use strict";
+    jQuery(document).ready(function(){       
+
+
+
+
 jQuery(document).ready(function(){    
     var aeolusPortfP = new AeolusPortfolioPlugin();
     aeolusPortfP.init();
@@ -315,4 +322,14 @@ function AeolusPortfolioPlugin(){
         jQuery('.navContentMask').css('width', jQuery('.navContentMask').parent().width()-80+'px');
     }
 }
+
+
+
+
+
+
+    });
+})(jQuery);
+
+
 

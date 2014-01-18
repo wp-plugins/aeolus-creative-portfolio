@@ -1,10 +1,10 @@
 <?php
-require_once(RXP_CLASS_PATH.'/com/riaextended/php/customposts/GenericPostType.php');
-require_once(RXP_CLASS_PATH.'/com/riaextended/php/libs/rx__resizer.php');
+require_once(AXP_CLASS_PATH.'/com/riaextended/php/customposts/GenericPostType.php');
+require_once(AXP_CLASS_PATH.'/com/riaextended/php/libs/rx__resizer.php');
 /**
  * Rx CPT
  */
-class RxCPT extends RXGenericPostType {
+class AxCPT extends AXGenericPostType {
 	
 	/* THUMBS SUBTITLE
 	================================================== */	
@@ -43,7 +43,7 @@ class RxCPT extends RXGenericPostType {
 			$customPostOptions = get_post_meta($post->ID, $this->getPostCustomMeta(), false);									
 		?>
 		<p class="sk_notice"><strong>NOTE!</strong> As a thumb preview please add a featured image from the right panel. Recommended featured image: 1980x1080 (about 150KB-300KB filesize).</p>
-		<div id="featured_images_rx_portfolio" class="optionBox" data-post_meta="<?php echo RX_POST_CUSTOM_META;?>">
+		<div id="featured_images_rx_portfolio" class="optionBox" data-post_meta="<?php echo AX_POST_CUSTOM_META;?>">
 			<strong>Featured Images</strong>
 			<div class="hline"></div>
 			<?php

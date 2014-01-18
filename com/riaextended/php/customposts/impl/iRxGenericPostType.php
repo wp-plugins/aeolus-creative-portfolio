@@ -1,6 +1,6 @@
 <?php
 
-interface IRXGenericPostType{
+interface IAXGenericPostType{
 	
 	public function create($cptHelper, $settings);
 	public function getSettings();

@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
 <?php
-require_once(RXP_CLASS_PATH.'/com/riaextended/php/rx_post_options.php');
-require_once(RXP_CLASS_PATH.'/com/riaextended/php/rx_plugin_options.php');
+require_once(AXP_CLASS_PATH.'/com/riaextended/php/rx_post_options.php');
+require_once(AXP_CLASS_PATH.'/com/riaextended/php/rx_plugin_options.php');
 
-$post_options = new RxPostOptions(get_the_ID());
+$post_options = new AxPostOptions(get_the_ID());
 $featured_images = $post_options->getFeaturedImages(1980, 1080);
 $video_settings = $post_options->getVideoSettings();
 $subtitle = $post_options->getSubtitle();
@@ -14,7 +14,7 @@ $svg_poly_image_opacity = '.8';
 $portfolio_thumbs = $post_options->gePortfolioThumbs();
 $count_thumbs = -1;
 
-$pluginOpts = new PluginOptions();
+$pluginOpts = new AxPluginOptions();
 $labels = $pluginOpts->getLabels();
 $colors = $pluginOpts->getColors();
 $svg_line_color = $colors['generalCol'];
@@ -171,7 +171,7 @@ $related_post_settings = $pluginOpts->getRelatedSettings();
 																			
 						
 						if(isset($ids)){
-								$posts_array = get_posts(array('numberposts'=>$related_post_settings['relatedProjectsMaxNo'], 'post_type'=>RX_PORTFOLIO_SLUG, 'post_status'=>'publish',
+								$posts_array = get_posts(array('numberposts'=>$related_post_settings['relatedProjectsMaxNo'], 'post_type'=>AX_PORTFOLIO_SLUG, 'post_status'=>'publish',
 								'exclude'=>get_the_ID(), 'tax_query'=>array(
 										'relation'=>'AND',
 										array('taxonomy'=>'portfolio_categories',

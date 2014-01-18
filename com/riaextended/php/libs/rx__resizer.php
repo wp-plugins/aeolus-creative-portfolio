@@ -21,7 +21,7 @@
 * @return str|array
 */
 
-function rx__resize( $url, $width, $height = null, $crop = null, $single = true ) {
+function ax__resize( $url, $width, $height = null, $crop = null, $single = true ) {
 	
 	//validate inputs
 	if(!$url OR !$width ) return false;

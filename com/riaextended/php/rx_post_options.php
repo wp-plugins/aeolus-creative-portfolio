@@ -3,12 +3,12 @@
 /**
  * post options
  */
-require_once(RXP_CLASS_PATH.'/com/riaextended/php/libs/rx__resizer.php');
-class RxPostOptions {
+require_once(AXP_CLASS_PATH.'/com/riaextended/php/libs/rx__resizer.php');
+class AxPostOptions {
 	
 	private $customPostOptions;
 	function __construct($id) {
-		$this->customPostOptions = get_post_meta($id, RX_POST_CUSTOM_META, false);
+		$this->customPostOptions = get_post_meta($id, AX_POST_CUSTOM_META, false);
 	}	
 	
 	//get featured image
@@ -40,9 +40,9 @@ class RxPostOptions {
 		$res = wp_get_attachment_image_src(get_post_thumbnail_id($post_id), 'full');
 		if($res){
 			if($isOneCol){
-				$thumb_temp_url = rx__resize($res[0], $w);
+				$thumb_temp_url = ax__resize($res[0], $w);
 			}else{
-				$thumb_temp_url = rx__resize($res[0], $w, $h, true);
+				$thumb_temp_url = ax__resize($res[0], $w, $h, true);
 			}
 			($thumb_temp_url)?$imageURL = $thumb_temp_url:$imageURL=$imageURL;	
 		}
@@ -61,7 +61,7 @@ class RxPostOptions {
 				/*
 				$imageUrl = 'http://placehold.it/'.$w.'x'.$h;
 				if($res){
-					$resizeRes = rx__resize($res[0], $w);
+					$resizeRes = ax__resize($res[0], $w);
 					$imageUrl = ($resizeRes)?$resizeRes:$imageUrl;					
 				}				 
 				*/
@@ -81,7 +81,7 @@ class RxPostOptions {
 				$res = wp_get_attachment_image_src($featuredImagesAC[$i], 'full'); 
 				$imageUrl = 'http://placehold.it/'.$w.'x'.$h;
 				if($res){
-					$resizeRes = rx__resize($res[0], $w, $h, true);
+					$resizeRes = ax__resize($res[0], $w, $h, true);
 					$imageUrl = ($resizeRes)?$resizeRes:$imageUrl;					
 				}
 				array_push($featuredImages, $imageUrl);
@@ -94,7 +94,7 @@ class RxPostOptions {
 		$imageURL = 'http://placehold.it/'.$w.'x'.$h;
 		$res = wp_get_attachment_image_src(get_post_thumbnail_id($post_id), 'full');
 		if($res){
-			$thumb_temp_url = rx__resize($res[0], $w, $h, true);
+			$thumb_temp_url = ax__resize($res[0], $w, $h, true);
 			($thumb_temp_url)?$imageURL = $thumb_temp_url:$imageURL=$imageURL;	
 		}
 		return $imageURL;		
