@@ -66,7 +66,7 @@ class AXPluginCore extends AxPluginBase {
 	private function addTaxonomy(){
 		//portfolio taxonomy
 		if(isset($this->rxCPT)){
-			register_taxonomy('portfolio_categories', $this->rxCPT->getPostSlug(), array('label'=>'Portfolio Categories', 'hierarchical'=>true));
+			register_taxonomy('ae_portfolio_categories', $this->rxCPT->getPostSlug(), array('label'=>'Portfolio Categories', 'hierarchical'=>true));
 		}				
 	}		
 	

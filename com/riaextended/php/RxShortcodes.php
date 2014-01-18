@@ -142,7 +142,7 @@ class RxPShortcodes{
 			$args = array(
 				'tax_query' => array(
 					array(
-						'taxonomy' => 'portfolio_categories',
+						'taxonomy' => 'ae_portfolio_categories',
 						'field' => 'id',
 						'terms' => $term_id
 					)
@@ -221,7 +221,7 @@ class RxPShortcodes{
 			$args = array(
 				'tax_query' => array(
 					array(
-						'taxonomy' => 'portfolio_categories',
+						'taxonomy' => 'ae_portfolio_categories',
 						'field' => 'id',
 						'terms' => $term_id
 					)
@@ -297,7 +297,7 @@ class RxPShortcodes{
 			$args = array(
 				'tax_query' => array(
 					array(
-						'taxonomy' => 'portfolio_categories',
+						'taxonomy' => 'ae_portfolio_categories',
 						'field' => 'id',
 						'terms' => $term_id
 					)
