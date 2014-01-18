@@ -43,7 +43,7 @@ class RxPShortcodes{
 					$query->the_post();	
 					$id = get_the_ID();
 					$title = get_the_title($id);					
-					$post_options = new RxPostOptions(get_the_ID());
+					$post_options = new AxPostOptions(get_the_ID());
 					$subtitle = $post_options->getSubtitle();					
 					$featuredImageURL = $post_options->getFeaturedImageURL(get_the_ID());					
 					$out .= '
@@ -166,7 +166,7 @@ class RxPShortcodes{
 														
 					$query->the_post();
 					$id = get_the_ID();
-					$post_options = new RxPostOptions($id);
+					$post_options = new AxPostOptions($id);
 					$thumbnail_url = $post_options->getFeaturedImage($id, 800, 650);					
 					$title = get_the_title($id);					
 					
@@ -245,7 +245,7 @@ class RxPShortcodes{
 														
 					$query->the_post();
 					$id = get_the_ID();
-					$post_options = new RxPostOptions($id);
+					$post_options = new AxPostOptions($id);
 					$thumbnail_url = $post_options->getFeaturedImage($id, 800, 650);					
 					$title = get_the_title($id);					
 					
@@ -316,7 +316,7 @@ class RxPShortcodes{
 														
 					$query->the_post();					
 					$id = get_the_ID();
-					$post_options = new RxPostOptions($id);
+					$post_options = new AxPostOptions($id);
 					$thumbnail_url = $post_options->getFeaturedImage($id, 1200, 500, true);					
 					$title = get_the_title($id);					
 					$out .= '
