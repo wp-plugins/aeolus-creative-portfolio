@@ -204,7 +204,7 @@ $related_post_settings = $pluginOpts->getRelatedSettings();
 											//echo $groupCount." -open row <br />";
 										}																	
 										
-										$post_opts = new RxPostOptions($post->ID);
+										$post_opts = new AxPostOptions($post->ID);
 																													
 										$p_thumb = $post_opts->getFeaturedImageThumb($post->ID, 800, 500);									
 										$permalink = get_permalink($post->ID);
