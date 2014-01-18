@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Aeolus - Creative Portfolio
-Plugin URI: http://sakurapixel.com/
+Plugin URI: http://sakuraplugins.com/
 Description: Aeolus – a carefully crafted WordPress plugin that displays your work in a clean, fancy way.
-Author: SakuraPixel
-Version: 1.1
-Author URI: http://sakurapixel.com/
+Author: SakuraPlugins
+Version: 1.2
+Author URI: http://sakuraplugins.com/
 */
 define('AX_TEMPPATH', plugins_url('', __FILE__));
 define('AXP_JS_ADMIN', AX_TEMPPATH.'/com/riaextended/js');
