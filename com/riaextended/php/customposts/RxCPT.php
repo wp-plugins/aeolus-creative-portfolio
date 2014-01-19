@@ -59,7 +59,7 @@ class AxCPT extends AXGenericPostType {
 									$res = wp_get_attachment_image_src($featuredImagesAC[$i], 'medium');
 									$iconUrl = 'http://placehold.it/150x150';
 									if($res){
-										$resizeRes = rx__resize($res[0], 150, 150, true);
+										$resizeRes = ax__resize($res[0], 150, 150, true);
 										$iconUrl = ($resizeRes)?$resizeRes:$iconUrl;
 									}
 									$iconHTML = '<li class="ui-state-default"><div class="thumbBoxImage">';
