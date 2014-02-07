@@ -89,4 +89,51 @@
 	margin-top: 10px;
 }
 
+#gravityBanner{
+	background: url('images/simple_dashed.png');
+	min-height: 50px;
+	border-radius: 3px;
+	padding: 25px 15px;
+	max-height: 70px;
+	overflow: hidden;	
+	margin-right: 21px;
+	margin-bottom: 10px;
+	background-color: #000000;
+}
+.gravityBannerSpace{
+	height: 15px;
+}
+
+#adminLogo{
+	width: 318px;
+	height: 46px;
+	background: url('images/admin_logo.png');
+	background-repeat: no-repeat;
+	float: left;
+}
+.supportUI{
+	float: right;
+}
+.pluginInfo{
+	float: right;
+	color: #979596;
+	line-height: 40px;
+	margin-right: 10px;
+}
+a.skButton{
+	display: inline-block !important;
+	border: none !important;
+	outline: none !important;	
+	text-decoration: none !important;
+	color: #FFFFFF !important;
+	padding: 10px 20px !important;	
+	border-radius: 2px !important;
+}
+a.skActionButton{
+	color: #FFFFFF;
+	background-color: #1abb9f !important;
+}
+a.skActionButton:hover{
+	background-color: #0aa187 !important;
+}
 
