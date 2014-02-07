@@ -4,7 +4,7 @@ Donate link: http://sakuraplugins.com/donate/
 Tags: portfolio, gallery, parallax, slideshow, creative
 Requires at least: 3.6
 Tested up to: 3.8
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,8 @@ Aeolus, a carefully crafted WordPress plugin that displays your work in a clean,
 Aeolus, a carefully crafted WordPress plugin that displays your work in a clean, fancy way. Some of the plugin’s strong points are: unlimited colors, fully responsive, advanced admin panel (easy drag and drop interface), modern look & feel. 
 
 [PREVIEW](http://www.sakuraplugins.com/aeolus-creative-wordpress-portfolio-showcase/)
-[Support](http://sakuraplugins.com/)
+ [SUPPORT](http://sakuraplugins.com/)
+ [TWITTER SUPPORT](https://twitter.com/IonelCrisu) 
 
 == Installation ==
 
@@ -40,6 +41,8 @@ An answer to that question.
 
 == Changelog ==
 
+= 1.4 =
+* Added custom url (permalink option).
 = 1.0 =
 * First release.
 
