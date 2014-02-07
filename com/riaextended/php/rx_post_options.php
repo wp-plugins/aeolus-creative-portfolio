@@ -113,6 +113,15 @@ class AxPostOptions {
 	public function getSubtitle(){
 		return (isset($this->customPostOptions[0]['rx_portfolio_subtitle']))?$this->customPostOptions[0]['rx_portfolio_subtitle']:'';
 	}	
+
+	//get subtitle
+	public function getURL($ids){
+		$customUrl = (isset($this->customPostOptions[0]['rx_portfolio_customurl']))?$this->customPostOptions[0]['rx_portfolio_customurl']:false;
+		if(!$customUrl){
+			$customUrl = get_permalink($ids);
+		}
+		return $customUrl;
+	}
 	
 	
 	public function get_the_excerpt_max_charlength($charlength) {

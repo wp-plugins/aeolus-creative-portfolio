@@ -12,7 +12,7 @@
 						    	<p>Show related projects within single pages.</p>
 						    	<div class="hline"></div>
 						    	<div class="spacer10"></div>
-						    	<p class="sk_notice"><strong>NOTE!</strong> In order Related Projects to work you need to assign tags to projects.</p>					    						    							    	
+						    	<p class="sk_notice"><strong>NOTE!</strong> In order Related Projects to work you need to assign categories to projects.</p>					    						    							    	
 						    	<div>
 						    		<?php
 									$showRelated = (isset($options['showRelated']))?$options['showRelated']:'';

@@ -155,7 +155,7 @@ $related_post_settings = $pluginOpts->getRelatedSettings();
 		<?php if($related_post_settings['showRelated']):?>
 			<?php
 						$showRelatedPosts = false;
-					 	$terms = get_the_terms($post->ID , 'portfolio_categories', 'string');			
+					 	$terms = get_the_terms($post->ID , 'ae_portfolio_categories', 'string');			
 			?>
 			<?php if(is_array($terms)):?>
 			<!--related main-->
@@ -174,7 +174,7 @@ $related_post_settings = $pluginOpts->getRelatedSettings();
 								$posts_array = get_posts(array('numberposts'=>$related_post_settings['relatedProjectsMaxNo'], 'post_type'=>AX_PORTFOLIO_SLUG, 'post_status'=>'publish',
 								'exclude'=>get_the_ID(), 'tax_query'=>array(
 										'relation'=>'AND',
-										array('taxonomy'=>'portfolio_categories',
+										array('taxonomy'=>'ae_portfolio_categories',
 										'field'=>'id',
 										'terms'=>$ids									
 										)
@@ -204,7 +204,7 @@ $related_post_settings = $pluginOpts->getRelatedSettings();
 											//echo $groupCount." -open row <br />";
 										}																	
 										
-										$post_opts = new RxPostOptions($post->ID);
+										$post_opts = new AxPostOptions($post->ID);
 																													
 										$p_thumb = $post_opts->getFeaturedImageThumb($post->ID, 800, 500);									
 										$permalink = get_permalink($post->ID);
