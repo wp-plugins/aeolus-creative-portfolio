@@ -14,21 +14,25 @@ class AxCPT extends AXGenericPostType {
 			return $post_id;
 						
 			$customPostOptions = get_post_meta($post->ID, $this->getPostCustomMeta(), false);
-			$rx_portfolio_subtitle = (isset($customPostOptions[0]['rx_portfolio_subtitle']))?$customPostOptions[0]['rx_portfolio_subtitle']:'';															
+			$rx_portfolio_subtitle = (isset($customPostOptions[0]['rx_portfolio_subtitle']))?$customPostOptions[0]['rx_portfolio_subtitle']:'';	
+			$rx_portfolio_customurl = (isset($customPostOptions[0]['rx_portfolio_customurl']))?$customPostOptions[0]['rx_portfolio_customurl']:'';			
+															
 		?>
 		<div class="optionBox">
-			<p class="sk_notice"><strong>NOTE!</strong> Subtitle will be displayed within preview.</p>
+			<p class="sk_notice"><strong>NOTE!</strong> Subtitle will be displayed within preview. Custom URL will replace the permalink, portfolio item will redirect to a custom URL (Leave blank to use the original permalink).</p>
 			<div class="sk_admin_row">
 				<div class="sk_admin_span3">
 					Subtitle:
 					<input style="height: 30px" type="text" name="<?php echo $this->getPostCustomMeta();?>[rx_portfolio_subtitle]" value="<?php echo $rx_portfolio_subtitle;?>" />
 				</div>
-				<div class="sk_admin_span3">															
+				<div class="sk_admin_span3">	
+					Custom url:
+					<input style="height: 30px" type="text" name="<?php echo $this->getPostCustomMeta();?>[rx_portfolio_customurl]" value="<?php echo esc_url($rx_portfolio_customurl);?>" />																		
 				</div>
 				<div class="sk_admin_span3">															
 				</div>
 				<div class="sk_clear_fx"></div>
-			</div>			
+			</div>		
 		</div>
 		<?php		
 	}	

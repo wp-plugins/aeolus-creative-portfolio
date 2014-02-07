@@ -69,7 +69,7 @@ class RxPShortcodes{
 				                     <polygon class="permalinkFill" fill="'.$pluginOpts->adjustBrightness($colors['generalCol'], -30).'" fill-opacity="0" points="0,0 140,0 70,75" />
 				                </svg>	
 			             	</div>
-			             	<a class="aeolusFont1 openPortfolio" href="'.get_permalink($id).'">'.$labels['readMoreLB'].'</a>
+			             	<a class="aeolusFont1 openPortfolio" href="'.$post_options->getURL($id).'">'.$labels['readMoreLB'].'</a>
 			             </div>
 			             <!--portfolio title-->	
 			             
@@ -172,8 +172,8 @@ class RxPShortcodes{
 					
 					$out .= '
 					<div class="span4 rx_thumb_ui">
-						<div class="rx_thumb_container"><a href="'.get_permalink($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
-						<div class="rx_hoverui" data-url="'.get_permalink($id).'">
+						<div class="rx_thumb_container"><a href="'.$post_options->getURL($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
+						<div class="rx_hoverui" data-url="'.$post_options->getURL($id).'">
 							<p class="rx_thumb_title aeolusFont1">'.$title.'</p>																				
 						</div>						
 					</div>
@@ -251,8 +251,8 @@ class RxPShortcodes{
 					
 					$out .= '					
 					<div class="span6 rx_thumb_ui">
-						<div class="rx_thumb_container"><a href="'.get_permalink($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
-						<div class="rx_hoverui" data-url="'.get_permalink($id).'">
+						<div class="rx_thumb_container"><a href="'.$post_options->getURL($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
+						<div class="rx_hoverui" data-url="'.$post_options->getURL($id).'">
 							<p class="rx_thumb_title aeolusFont1">'.$title.'</p>																				
 						</div>						
 					</div>					
@@ -321,8 +321,8 @@ class RxPShortcodes{
 					$title = get_the_title($id);					
 					$out .= '
 					<div class="span12 rx_thumb_ui rx_thumb_ui_one_col">
-						<div class="rx_thumb_container"><a href="'.get_permalink($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
-						<div class="rx_hoverui" data-url="'.get_permalink($id).'">
+						<div class="rx_thumb_container"><a href="'.$post_options->getURL($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
+						<div class="rx_hoverui" data-url="'.$post_options->getURL($id).'">
 							<p class="rx_thumb_title aeolusFont1">'.$title.'</p>																				
 						</div>						
 					</div>
