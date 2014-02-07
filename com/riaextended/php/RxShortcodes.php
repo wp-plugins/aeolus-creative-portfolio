@@ -43,7 +43,7 @@ class RxPShortcodes{
 					$query->the_post();	
 					$id = get_the_ID();
 					$title = get_the_title($id);					
-					$post_options = new RxPostOptions(get_the_ID());
+					$post_options = new AxPostOptions(get_the_ID());
 					$subtitle = $post_options->getSubtitle();					
 					$featuredImageURL = $post_options->getFeaturedImageURL(get_the_ID());					
 					$out .= '
@@ -69,7 +69,7 @@ class RxPShortcodes{
 				                     <polygon class="permalinkFill" fill="'.$pluginOpts->adjustBrightness($colors['generalCol'], -30).'" fill-opacity="0" points="0,0 140,0 70,75" />
 				                </svg>	
 			             	</div>
-			             	<a class="aeolusFont1 openPortfolio" href="'.get_permalink($id).'">'.$labels['readMoreLB'].'</a>
+			             	<a class="aeolusFont1 openPortfolio" href="'.$post_options->getURL($id).'">'.$labels['readMoreLB'].'</a>
 			             </div>
 			             <!--portfolio title-->	
 			             
@@ -142,7 +142,7 @@ class RxPShortcodes{
 			$args = array(
 				'tax_query' => array(
 					array(
-						'taxonomy' => 'portfolio_categories',
+						'taxonomy' => 'ae_portfolio_categories',
 						'field' => 'id',
 						'terms' => $term_id
 					)
@@ -166,14 +166,14 @@ class RxPShortcodes{
 														
 					$query->the_post();
 					$id = get_the_ID();
-					$post_options = new RxPostOptions($id);
+					$post_options = new AxPostOptions($id);
 					$thumbnail_url = $post_options->getFeaturedImage($id, 800, 650);					
 					$title = get_the_title($id);					
 					
 					$out .= '
 					<div class="span4 rx_thumb_ui">
-						<div class="rx_thumb_container"><a href="'.get_permalink($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
-						<div class="rx_hoverui" data-url="'.get_permalink($id).'">
+						<div class="rx_thumb_container"><a href="'.$post_options->getURL($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
+						<div class="rx_hoverui" data-url="'.$post_options->getURL($id).'">
 							<p class="rx_thumb_title aeolusFont1">'.$title.'</p>																				
 						</div>						
 					</div>
@@ -221,7 +221,7 @@ class RxPShortcodes{
 			$args = array(
 				'tax_query' => array(
 					array(
-						'taxonomy' => 'portfolio_categories',
+						'taxonomy' => 'ae_portfolio_categories',
 						'field' => 'id',
 						'terms' => $term_id
 					)
@@ -245,14 +245,14 @@ class RxPShortcodes{
 														
 					$query->the_post();
 					$id = get_the_ID();
-					$post_options = new RxPostOptions($id);
+					$post_options = new AxPostOptions($id);
 					$thumbnail_url = $post_options->getFeaturedImage($id, 800, 650);					
 					$title = get_the_title($id);					
 					
 					$out .= '					
 					<div class="span6 rx_thumb_ui">
-						<div class="rx_thumb_container"><a href="'.get_permalink($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
-						<div class="rx_hoverui" data-url="'.get_permalink($id).'">
+						<div class="rx_thumb_container"><a href="'.$post_options->getURL($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
+						<div class="rx_hoverui" data-url="'.$post_options->getURL($id).'">
 							<p class="rx_thumb_title aeolusFont1">'.$title.'</p>																				
 						</div>						
 					</div>					
@@ -297,7 +297,7 @@ class RxPShortcodes{
 			$args = array(
 				'tax_query' => array(
 					array(
-						'taxonomy' => 'portfolio_categories',
+						'taxonomy' => 'ae_portfolio_categories',
 						'field' => 'id',
 						'terms' => $term_id
 					)
@@ -316,13 +316,13 @@ class RxPShortcodes{
 														
 					$query->the_post();					
 					$id = get_the_ID();
-					$post_options = new RxPostOptions($id);
+					$post_options = new AxPostOptions($id);
 					$thumbnail_url = $post_options->getFeaturedImage($id, 1200, 500, true);					
 					$title = get_the_title($id);					
 					$out .= '
 					<div class="span12 rx_thumb_ui rx_thumb_ui_one_col">
-						<div class="rx_thumb_container"><a href="'.get_permalink($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
-						<div class="rx_hoverui" data-url="'.get_permalink($id).'">
+						<div class="rx_thumb_container"><a href="'.$post_options->getURL($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
+						<div class="rx_hoverui" data-url="'.$post_options->getURL($id).'">
 							<p class="rx_thumb_title aeolusFont1">'.$title.'</p>																				
 						</div>						
 					</div>

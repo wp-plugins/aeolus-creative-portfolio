@@ -19,9 +19,19 @@ class AXPluginCore extends AxPluginBase {
 		if(isset($options['addSinglePage'])){
 			add_filter("single_template", array($this, 'rx_plugin_single'));
 		}
-		register_activation_hook($options['PLUGIN_FILE'], array($this, 'rx_activate_plugin') );		
+		register_activation_hook($options['PLUGIN_FILE'], array($this, 'rx_activate_plugin') );
+		add_action("wp_before_admin_bar_render", array($this, 'adminBarCustom')); 		
 	}
 	
+	//admin bar custom
+	public function adminBarCustom(){
+		if(function_exists('get_current_screen')){
+			$current_screen = get_current_screen();		
+			if($current_screen->post_type==AX_PORTFOLIO_SLUG){			
+				require_once(AXP_CLASS_PATH.'com/riaextended/php/admin_pages/banner.php');
+			}
+		}
+	}
 	
 	//plugin activation
 	public function rx_activate_plugin(){
@@ -66,7 +76,7 @@ class AXPluginCore extends AxPluginBase {
 	private function addTaxonomy(){
 		//portfolio taxonomy
 		if(isset($this->rxCPT)){
-			register_taxonomy('portfolio_categories', $this->rxCPT->getPostSlug(), array('label'=>'Portfolio Categories', 'hierarchical'=>true));
+			register_taxonomy('ae_portfolio_categories', $this->rxCPT->getPostSlug(), array('label'=>'Portfolio Categories', 'hierarchical'=>true));
 		}				
 	}		
 	
@@ -93,7 +103,7 @@ class AXPluginCore extends AxPluginBase {
 		//add meta boxes pages		
 		$this->rxCPT->addMetaBox(__('Featured images', AX_PLUGIN_TEXTDOMAIN), 'meta_box_images_id_21783', 'meta_box_images');
 		$this->rxCPT->addMetaBox(__('Featured video', AX_PLUGIN_TEXTDOMAIN), 'meta_box_video_id_8249', 'meta_box_video');							
-		$this->rxCPT->addMetaBox(__('Subtitle', AX_PLUGIN_TEXTDOMAIN), 'meta_box_subtitle_id_023648', 'meta_box_subtitle');
+		$this->rxCPT->addMetaBox(__('Extra Settings', AX_PLUGIN_TEXTDOMAIN), 'meta_box_subtitle_id_023648', 'meta_box_subtitle');
 	}
 
 	//add submenu page
@@ -114,7 +124,7 @@ class AXPluginCore extends AxPluginBase {
 			ScriptPManager::enqueTweenmax();
 			wp_register_script( 'portfolio_options_script', AXP_JS_ADMIN.'/rx_portfolio_admin.js', array('jquery'));			 
 			wp_enqueue_script('portfolio_options_script');			
-			wp_enqueue_media();						
+			wp_enqueue_media();					
 		}
 		if($screenID==AX_PORTFOLIO_SLUG.'_page_rx_portfolio_sett'){
 			parent::adminEnqueueScriptsHandler();
@@ -127,11 +137,18 @@ class AXPluginCore extends AxPluginBase {
 			wp_enqueue_script('rx_options_page_script');
 			ScriptPManager::enqueColorPicker();
 			wp_register_style('rx_admin-options', AX_TEMPPATH.'/com/riaextended/css/admin_options.css');
-			wp_enqueue_style('rx_admin-options');			
-			//$this->enqueueThickbox();			
-		}		
+			wp_enqueue_style('rx_admin-options');									
+		}
+		if($screenID=="edit-".AX_PORTFOLIO_SLUG || $screenID==AX_PORTFOLIO_SLUG."_page_rx_portfolio_sett" || $screenID==AX_PORTFOLIO_SLUG){
+			$this->bannerCss();	
+			$this->bannerCss();
+		}				
 	}
-	
+
+	public function bannerCss(){
+		wp_register_style('sk_admin-style', AX_TEMPPATH.'/com/riaextended/css/rx_admin.css');
+		wp_enqueue_style('sk_admin-style');
+	}
 		
 
 	//WP Enqueue scripts handler
