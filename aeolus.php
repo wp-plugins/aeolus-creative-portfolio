@@ -4,7 +4,7 @@ Plugin Name: Aeolus - Creative Portfolio
 Plugin URI: http://sakuraplugins.com/
 Description: Aeolus – a carefully crafted WordPress plugin that displays your work in a clean, fancy way.
 Author: SakuraPlugins
-Version: 1.5
+Version: 1.6
 Author URI: http://sakuraplugins.com/
 */
 define('AX_TEMPPATH', plugins_url('', __FILE__));

@@ -265,6 +265,14 @@ a.openPortfolio:hover{
 	position: relative;
 	margin-bottom: 20px;
 }
+
+.hero_thumb_image_link{
+	display: block;
+}
+.hero_thumb_image_link img{
+	width: 100%;
+}
+
 .rx_related_post_overlay{
 	position: absolute;
 	left: 0px;
