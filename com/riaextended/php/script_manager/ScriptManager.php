@@ -36,6 +36,11 @@ class ScriptPManager {
 	}	
 
 	public static function enqueColorPicker(){
+			 wp_register_style( 'cpicker_style', AX_TEMPPATH.'/com/riaextended/js'.'/cpick/colpick.css');		 
+		     wp_enqueue_style( 'cpicker_style');
+			 wp_register_script( 'color_picker', AX_TEMPPATH.'/com/riaextended/js'.'/cpick/colpick.js', array('jquery'));
+			 wp_enqueue_script('color_picker');		     
+			/*
 			 //color picker style
 		     wp_register_style( 'cpicker_style', AX_TEMPPATH.'/com/riaextended/js'.'/cpicker/css/colorpicker.css');
 			 wp_register_style( 'cpicker_layout', AX_TEMPPATH.'/com/riaextended/js'.'/cpicker/css/layout.css');		 
@@ -50,7 +55,8 @@ class ScriptPManager {
 			 wp_enqueue_script('color_picker');
 			 wp_enqueue_script('color_picker_eye');	
 			 wp_enqueue_script('color_picker_layout');	
-			 wp_enqueue_script('color_picker_utils');			 		
+			 wp_enqueue_script('color_picker_utils');
+			 */			 		
 	}
 
 

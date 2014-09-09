@@ -2,9 +2,9 @@
 Contributors: sakurapixel
 Donate link: http://sakuraplugins.com/donate/
 Tags: portfolio, gallery, parallax, slideshow, creative
-Requires at least: 3.6
-Tested up to: 3.8
-Stable tag: 1.6
+Requires at least: 3.9
+Tested up to: 4.0
+Stable tag: 1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,7 +40,9 @@ An answer to that question.
 4. Front end screenshot
 
 == Changelog ==
-
+= 1.7 =
+* Update TweenMax animation engine to 1.13.2
+* Fix some WP 4.0 related bugs
 = 1.4 =
 * Added custom url (permalink option).
 = 1.0 =
