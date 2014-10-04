@@ -37,14 +37,7 @@ class AXOptionPage extends AX_GenericSettingsPage {
 		  
 		  <!--options wrapper-->
 		  <div id="optionsWrapper">	
-		        <div class="navbar navbar-inverse">
-		            <div class="navbar-inner">
-		                <div class="container">
-		                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> 
-		                    <a class="brand" href="#overview">Aeolus Settings</a>
-		                </div>
-		            </div>
-		        </div>
+
         		  									
 				<p class="submit">
 					<input type="submit" class="button-primary pull-right" value="<?php _e('Save Changes', AX_PLUGIN_TEXTDOMAIN) ?>" />
@@ -52,10 +45,7 @@ class AXOptionPage extends AX_GenericSettingsPage {
 		        <div class="clearfix spacer10"></div>		        
 		        
 			    <div class="tabbable tabs-left">
-				    <ul class="nav nav-tabs">					    
-					    <li class="active"><a href="#general_opts" data-toggle="tab"><i class="icon-home"></i> <?php _e('General Options', AX_PLUGIN_TEXTDOMAIN) ?></a></li>					    					    					    				    				    
-				    </ul>
-				    
+
 				    <!--tabs content-->
 				    <div class="tab-content">
 					    					    
