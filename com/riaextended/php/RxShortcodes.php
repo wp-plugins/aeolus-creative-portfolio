@@ -152,7 +152,7 @@ class RxPShortcodes{
 		}				
 						
 		
-		$out = '<div class="rx_portfolio">';			
+		$out = '<div class="rx_portfolio container-fluid">';			
 			$query = new WP_Query($rx_query);
 			if($query->have_posts()) {
 				$groupCount = -1;
@@ -160,7 +160,7 @@ class RxPShortcodes{
 				while($query->have_posts()){
 					$groupCount++;
 					if($groupCount==0){
-						$out .= '<div class="row-fluid">';						
+						$out .= '<div class="row">';						
 						//echo $groupCount." -open row <br />";
 					}
 														
@@ -171,11 +171,13 @@ class RxPShortcodes{
 					$title = get_the_title($id);					
 					
 					$out .= '
-					<div class="span4 rx_thumb_ui">
-						<div class="rx_thumb_container"><a href="'.$post_options->getURL($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
-						<div class="rx_hoverui" data-url="'.$post_options->getURL($id).'">
-							<p class="rx_thumb_title aeolusFont1">'.$title.'</p>																				
-						</div>						
+					<div class="col-md-4">
+						<div class="rx_thumb_ui">
+							<div class="rx_thumb_container"><a href="'.$post_options->getURL($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
+							<div class="rx_hoverui" data-url="'.$post_options->getURL($id).'">
+								<p class="rx_thumb_title aeolusFont1">'.$title.'</p>																				
+							</div>					
+						</div>	
 					</div>
 					';					
 					
@@ -231,7 +233,7 @@ class RxPShortcodes{
 		}	
 		
 		
-		$out = '<div class="rx_portfolio">';			
+		$out = '<div class="rx_portfolio container-fluid">';			
 			$query = new WP_Query($rx_query);
 			if($query->have_posts()) {
 				$groupCount = -1;
@@ -239,7 +241,7 @@ class RxPShortcodes{
 				while($query->have_posts()){
 					$groupCount++;
 					if($groupCount==0){
-						$out .= '<div class="row-fluid">';						
+						$out .= '<div class="row">';						
 						//echo $groupCount." -open row <br />";
 					}
 														
@@ -250,11 +252,13 @@ class RxPShortcodes{
 					$title = get_the_title($id);					
 					
 					$out .= '					
-					<div class="span6 rx_thumb_ui">
-						<div class="rx_thumb_container"><a href="'.$post_options->getURL($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
-						<div class="rx_hoverui" data-url="'.$post_options->getURL($id).'">
-							<p class="rx_thumb_title aeolusFont1">'.$title.'</p>																				
-						</div>						
+					<div class="col-md-6">
+						<div class="rx_thumb_ui">
+							<div class="rx_thumb_container"><a href="'.$post_options->getURL($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
+							<div class="rx_hoverui" data-url="'.$post_options->getURL($id).'">
+								<p class="rx_thumb_title aeolusFont1">'.$title.'</p>																				
+							</div>			
+						</div>			
 					</div>					
 					';					
 					
@@ -306,13 +310,13 @@ class RxPShortcodes{
 			$rx_query = array_merge($rx_query, $args);			 		
 		}
 		
-		$out = '<div class="rx_portfolio">';			
+		$out = '<div class="rx_portfolio container-fluid">';			
 			$query = new WP_Query($rx_query);
 			if($query->have_posts()) {				
 				
 				while($query->have_posts()){
 
-					$out .= '<div class="row-fluid">';
+					$out .= '<div class="row">';
 														
 					$query->the_post();					
 					$id = get_the_ID();
@@ -320,11 +324,13 @@ class RxPShortcodes{
 					$thumbnail_url = $post_options->getFeaturedImage($id, 1200, 500, true);					
 					$title = get_the_title($id);					
 					$out .= '
-					<div class="span12 rx_thumb_ui rx_thumb_ui_one_col">
-						<div class="rx_thumb_container"><a href="'.$post_options->getURL($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
-						<div class="rx_hoverui" data-url="'.$post_options->getURL($id).'">
-							<p class="rx_thumb_title aeolusFont1">'.$title.'</p>																				
-						</div>						
+					<div class="col-md-12">
+						<div class="rx_thumb_ui rx_thumb_ui_one_col">
+							<div class="rx_thumb_container"><a href="'.$post_options->getURL($id).'" class="rx_image_link"><img src="'.$thumbnail_url.'" alt="" /></a></div>
+							<div class="rx_hoverui" data-url="'.$post_options->getURL($id).'">
+								<p class="rx_thumb_title aeolusFont1">'.$title.'</p>																				
+							</div>						
+						</div>
 					</div>
 					';					
 					

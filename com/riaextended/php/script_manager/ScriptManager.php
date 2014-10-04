@@ -29,10 +29,10 @@ class ScriptPManager {
 			wp_enqueue_script('jquery-ui-spinner');
 			wp_enqueue_script('jquery-ui-accordion');
 			wp_enqueue_script('jquery-ui-dialog');
-			
+						
 			//jqueryui theme
-			wp_register_style('jqueryui-style', AXP_JS_ADMIN.'/jqueryui/css/redmond/jquery-ui-1.10.2.custom.css');
-			wp_enqueue_style('jqueryui-style');						
+			//wp_register_style('jqueryui-style', AXP_JS_ADMIN.'/jqueryui/css/redmond/jquery-ui-1.10.2.custom.css');
+			//wp_enqueue_style('jqueryui-style');						
 	}	
 
 	public static function enqueColorPicker(){

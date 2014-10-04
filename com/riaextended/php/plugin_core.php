@@ -128,9 +128,9 @@ class AXPluginCore extends AxPluginBase {
 		}
 		if($screenID==AX_PORTFOLIO_SLUG.'_page_rx_portfolio_sett'){
 			parent::adminEnqueueScriptsHandler();
-			wp_register_style('rx_admin_bootstrap', AX_TEMPPATH.'/com/riaextended/bootstrap_admin/css/bootstrap.min.css');				 
+			wp_register_style('rx_admin_bootstrap', AX_TEMPPATH.'/com/riaextended/bootstrap_3_0/css/bootstrap.min.css');				 
 			wp_enqueue_style('rx_admin_bootstrap');				
-			wp_register_script('rx_admin_bootstrap_js', AX_TEMPPATH.'/com/riaextended/bootstrap_admin/js/bootstrap.min.js', array('jquery'));
+			wp_register_script('rx_admin_bootstrap_js', AX_TEMPPATH.'/com/riaextended/bootstrap_3_0/js/bootstrap.min.js', array('jquery'));
 			wp_enqueue_script('rx_admin_bootstrap_js');
 			
 			wp_register_script('rx_options_page_script', AX_TEMPPATH.'/com/riaextended/js'.'/admin_pages/rx_options.js');
@@ -155,9 +155,9 @@ class AXPluginCore extends AxPluginBase {
 	public function WPEnqueueScriptsHandler(){
 		parent::WPEnqueueScriptsHandler();
 		ScriptPManager::enqueTweenmax();
-		wp_register_style('rx-bootstrap-light', AX_TEMPPATH.'/bootstrap_light/css/bootstrap.min.css');
+		wp_register_style('rx-bootstrap-light', AX_TEMPPATH.'/bootstrap_3_0/css/bootstrap.min.css');
 		wp_enqueue_style('rx-bootstrap-light');	
-		wp_register_script('rx-bootstrap-js', AX_TEMPPATH.'/bootstrap_light/js/bootstrap.min.js', array('jquery'));			 
+		wp_register_script('rx-bootstrap-js', AX_TEMPPATH.'/bootstrap_3_0/js/bootstrap.min.js', array('jquery'));			 
 		wp_enqueue_script('rx-bootstrap-js');
 		wp_register_style('rx_portfolio_css', AX_TEMPPATH.'/css/rx_portfolio.css');
 		wp_enqueue_style('rx_portfolio_css');

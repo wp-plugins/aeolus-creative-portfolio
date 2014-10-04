@@ -144,7 +144,7 @@ $related_post_settings = $pluginOpts->getRelatedSettings();
 			
 			
 			
-	<div class="related_content">
+	<div class="related_content rxPostContent">
 		<div class="rx_nav">
 		    <p class="alignright nextPost"><?php next_post_link('%link', $labels['nextLB'].' »');?></p>
 		    <p class="alignright previousPost"><?php previous_post_link('%link', '« '.$labels['prevLB']);?></p>
@@ -191,7 +191,9 @@ $related_post_settings = $pluginOpts->getRelatedSettings();
 				?>
 
 				<?php if($showRelatedPosts):?>
-					<div class="row-fluid rx_related_posts">
+					<div class="container-fluid">
+					<div class="row">
+								<div class="rx_related_posts">
 									<?php								
 									global $post;
 									$out = '';
@@ -210,7 +212,7 @@ $related_post_settings = $pluginOpts->getRelatedSettings();
 										$permalink = get_permalink($post->ID);
 										$r_title = get_the_title($post->ID);
 										$out .= '
-										<div class="span4">
+										<div class="col-md-4">
 											<div class="rx_related_post" data-url="'.$permalink.'">
 												<a href="'.$permalink.'" class="hero_thumb_image_link"><img src="'.$p_thumb.'" alt="" /></a>
 												<div class="rx_related_post_overlay">
@@ -233,7 +235,11 @@ $related_post_settings = $pluginOpts->getRelatedSettings();
 									}
 									echo $out;								
 									?>
+								</div>
 					</div>
+					<!--end row-->
+					</div>
+					<!--end container-->
 				<?php endif;?>
 			</div>
 			<?php endif;?>	

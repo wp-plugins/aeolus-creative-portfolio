@@ -33,7 +33,7 @@
 	background: rgba(26, 187, 159, .6);
 }
 .rx_thumb_title{	
-	font-size: 20px !important;
+	font-size: 18px !important;
 	text-transform: uppercase !important;
 	color: #FFFFFF !important;
 	font-weight: 300 !important;
@@ -327,9 +327,18 @@ a.rx_related_link{
 	font-weight: 300;
 	margin-top: -12px !important;	
 }
-.rxPostContent{
-	margin: 50px 0px;	
+.rxPostContent{	
+	position: relative;		
+	max-width: 1200px !important;	
+	margin: auto;
+	margin-top: 50px; margin-bottom: 50px;
 }
+@media all and (min-width: 700px) {
+	.rxPostContent{	
+		padding: 0px 20px;
+	}
+}
+
 .rxPostContentIndex{
 	margin-top: 70px;
 }
