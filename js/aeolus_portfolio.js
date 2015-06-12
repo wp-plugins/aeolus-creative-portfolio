@@ -33,11 +33,15 @@ function AeolusPortfolioPlugin(){
        var related_overlay_height = 70;
        jQuery('.rx_related_post').each(function(indx){
            jQuery(this).hover(function(e){                              
-               TweenMax.to(jQuery(this).find('.rx_related_post_overlay'), .2, {css:{'height':related_overlay_height}, ease:Power4.EaseIn});
-               TweenMax.to(jQuery(this).find('.rx_related_post_overlay'), .2, {css:{'top':jQuery(this).find('.rx_related_post_overlay').parent().height()/2-related_overlay_height/2}, ease:Power4.EaseIn});
+                jQuery(this).find('.rx_related_post_overlay').animate({
+                    height: related_overlay_height,
+                    top: jQuery(this).find('.rx_related_post_overlay').parent().height()/2-related_overlay_height/2    
+                }, 200);                             
            }, function(e){
-               TweenMax.to(jQuery(this).find('.rx_related_post_overlay'), .2, {css:{'height':1}, ease:Power4.EaseIn});
-               TweenMax.to(jQuery(this).find('.rx_related_post_overlay'), .2, {css:{'top':jQuery(this).find('.rx_related_post_overlay').parent().height()/2-1/2}, ease:Power4.EaseIn});               
+                jQuery(this).find('.rx_related_post_overlay').animate({
+                    height: 1,
+                    top: jQuery(this).find('.rx_related_post_overlay').parent().height()/2-1/2
+                }, 200); 
            });
            jQuery(this).find('.rx_related_post_overlay').css('top', jQuery(this).find('.rx_related_post_overlay').parent().height()/2-1/2+'px');
            jQuery(this).click(function(e){
@@ -80,15 +84,24 @@ function AeolusPortfolioPlugin(){
                 if(selectedPortfolioThumbIndx==indx){
                     return;
                 }
-                TweenMax.to(jQuery(this).find('.r_polly'), .2, {css:{'opacity':.7}, ease:Power4.EaseIn});                
-                TweenMax.to(jQuery(this).find('.polly_image'), .2, {css:{opacity:1}, ease:Power4.EaseIn});
-                //opacity
+                jQuery(this).find('.r_polly').animate({
+                    opacity: .7                    
+                }, 200);
+
+                jQuery(this).find('.polly_image').animate({
+                    opacity: 1                   
+                }, 200);                
             }, function(e){
                 if(selectedPortfolioThumbIndx==indx){
                     return;
-                }                
-                TweenMax.to(jQuery(this).find('.r_polly'), .3, {css:{'opacity':.2}, ease:Power4.EaseIn});                 
-                TweenMax.to(jQuery(this).find('.polly_image'), .3, {css:{opacity:.8}, ease:Power4.EaseIn});
+                }  
+                jQuery(this).find('.r_polly').animate({
+                    opacity: .2                    
+                }, 300);
+
+                jQuery(this).find('.polly_image').animate({
+                    opacity: .8                  
+                }, 300);                              
             });
         });        
         jQuery('.navContent').css('width', navContentWDTH+'px');
@@ -123,24 +136,32 @@ function AeolusPortfolioPlugin(){
             e.preventDefault();   
             var maskWidth = jQuery('.navContentMask').width();               
             var leftTo = extractNumber(jQuery('.navContent').css('left'))+maskWidth;
-            
-            TweenMax.to(jQuery('.navContent'), .8, {css:{left: leftTo}, ease:Power3.easeNone, onComplete: function(){
-                validateResult();
-            }});                 
+                jQuery('.navContent').animate({
+                    left: leftTo                  
+                }, 600, function(){
+                    validateResult();
+                });                                
         });
         jQuery('.rightNavControl').click(function(e){            
             e.preventDefault();         
             var maskWidth = jQuery('.navContentMask').width();               
             var leftTo = extractNumber(jQuery('.navContent').css('left'))-maskWidth;             
-            TweenMax.to(jQuery('.navContent'), .8, {css:{left: leftTo}, ease:Power3.easeNone, onComplete: function(){
-                validateResult();
-            }});                        
+                jQuery('.navContent').animate({
+                    left: leftTo                  
+                }, 600, function(){
+                    validateResult();
+                });                        
         });
         
         jQuery('.thumb_navigation').hover(function(e){
-            TweenMax.to(jQuery(this).find('.r_polly'), .3, {css:{'opacity':1}, ease:Power4.EaseIn});
+                jQuery(this).find('.r_polly').animate({
+                    opacity: 1                   
+                }, 300);            
+
         }, function(e){
-            TweenMax.to(jQuery(this).find('.r_polly'), .3, {css:{'opacity':.6}, ease:Power4.EaseIn});
+                jQuery(this).find('.r_polly').animate({
+                    opacity: .6                   
+                }, 300);            
         });
         
         function validateResult(){
@@ -155,12 +176,17 @@ function AeolusPortfolioPlugin(){
                 jQuery('.rightNavControl').css('visibility', 'hidden');
                 //jQuery('.navContent').css('left', -(jQuery('.navContent').width()-maskWidth)+'px');
                 leftTo = -(jQuery('.navContent').width()-maskWidth);
-                TweenMax.to(jQuery('.navContent'), .2, {css:{left: leftTo}, ease:Power3.easeIn});                                 
+
+                jQuery('.navContent').animate({
+                    left: leftTo                  
+                }, 300);
             }
             if(contentLeftPosition>=0){
                 jQuery('.leftNavControl').css('visibility', 'hidden');
                 //jQuery('.navContent').css('left', '0px');
-                TweenMax.to(jQuery('.navContent'), .2, {css:{left: 0}, ease:Power3.easeIn});
+                jQuery('.navContent').animate({
+                    left: 0                  
+                }, 300);
             }
             if(jQuery('.navContentMask').width()>jQuery('.navContent').width()){
                 //invalidate both

@@ -121,7 +121,6 @@ class AXPluginCore extends AxPluginBase {
 			parent::adminEnqueueScriptsHandler();
 			ScriptPManager::enqueColorPicker();
 			ScriptPManager::enqueJqueryUI();
-			ScriptPManager::enqueTweenmax();
 			wp_register_script( 'portfolio_options_script', AXP_JS_ADMIN.'/rx_portfolio_admin.js', array('jquery'));			 
 			wp_enqueue_script('portfolio_options_script');			
 			wp_enqueue_media();					
@@ -154,7 +153,6 @@ class AXPluginCore extends AxPluginBase {
 	//WP Enqueue scripts handler
 	public function WPEnqueueScriptsHandler(){
 		parent::WPEnqueueScriptsHandler();
-		ScriptPManager::enqueTweenmax();
 		wp_register_style('rx-bootstrap-light', AX_TEMPPATH.'/bootstrap_3_0/css/bootstrap.min.css');
 		wp_enqueue_style('rx-bootstrap-light');	
 		wp_register_script('rx-bootstrap-js', AX_TEMPPATH.'/bootstrap_3_0/js/bootstrap.min.js', array('jquery'));			 

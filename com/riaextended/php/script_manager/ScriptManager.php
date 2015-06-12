@@ -11,12 +11,6 @@ class ScriptPManager {
 		wp_register_script( 'fluidvids', AX_JS.'/external/fluidvids.min.js', array('jquery'), null, TRUE);
 		wp_enqueue_script('fluidvids');		
 	}
-	
-	public static function enqueTweenmax(){
-		//tween js
-		wp_register_script('squidmag_tweenmax', AX_JS.'/external/TweenMax.min.js', array('jquery'));
-		wp_enqueue_script('squidmag_tweenmax');			
-	}	
 
 	public static function enqueJqueryUI(){
 			//jqueryui		

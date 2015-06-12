@@ -113,9 +113,13 @@ function RxPortfolioAdmin(){
    function thumbsHoverAction(el){
        el.css('opacity', 0);       
        el.hover(function(e){
-           TweenMax.to(jQuery(this), .2, {css:{opacity:1}, ease:Power4.EaseIn});
+                jQuery(this).animate({
+                    opacity: 1                   
+                }, 200); 
        }, function(e){
-           TweenMax.to(jQuery(this), .2, {css:{opacity:0}, ease:Power4.EaseIn});
+                jQuery(this).animate({
+                    opacity: 2                   
+                }, 200);        
        });
    }
        

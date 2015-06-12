@@ -300,6 +300,9 @@ a.rx_related_link{
 .related_content .nextPost a:hover, .related_content .previousPost a:hover{
 	text-decoration: underline;
 }
+.previousPost a{
+	margin-right: 10px;
+}
 
 
 
