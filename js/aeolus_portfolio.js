@@ -332,12 +332,20 @@ function AeolusPortfolioPlugin(){
                 e.preventDefault();                
                 window.location.href = jQuery(this).attr('data-url');
             });
-            jQuery(this).hover(function(e){                                
-                TweenMax.to(jQuery(this).find('.rx_hoverui'), .2, {css:{'height':70}, ease:Power4.EaseIn});
-                TweenMax.to(jQuery(this).find('.rx_hoverui'), .2, {css:{'top':jQuery(this).height()/2-70/2}, ease:Power4.EaseIn});                
+            jQuery(this).hover(function(e){ 
+                jQuery(this).find('.rx_hoverui').animate({
+                  height: 70,
+                  top: jQuery(this).height()/2-70/2
+                }, 200);                           
+                //TweenMax.to(jQuery(this).find('.rx_hoverui'), .2, {css:{'height':70}, ease:Power4.EaseIn});
+                //TweenMax.to(jQuery(this).find('.rx_hoverui'), .2, {css:{'top':jQuery(this).height()/2-70/2}, ease:Power4.EaseIn});                
             }, function(e){
-                TweenMax.to(jQuery(this).find('.rx_hoverui'), .2, {css:{'height':1}, ease:Power4.EaseIn});
-                TweenMax.to(jQuery(this).find('.rx_hoverui'), .2, {css:{'top':jQuery(this).height()/2-1/2}, ease:Power4.EaseIn}); 
+                jQuery(this).find('.rx_hoverui').animate({
+                  height: 1,
+                  top: jQuery(this).height()/2-1/2
+                }, 200);              
+                //TweenMax.to(jQuery(this).find('.rx_hoverui'), .2, {css:{'height':1}, ease:Power4.EaseIn});
+                //TweenMax.to(jQuery(this).find('.rx_hoverui'), .2, {css:{'top':jQuery(this).height()/2-1/2}, ease:Power4.EaseIn}); 
             });
         });        
     }
